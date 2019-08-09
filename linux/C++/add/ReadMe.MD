@@ -1,25 +1,32 @@
-生成.so
+
+# 基本操作
+1.生成 .so
 g++ add.cpp -fPIC -shared -o libadd.so
 
+2.生成可执行文件
 g++ test.cpp -L. -ladd -o testAdd
 
+3.查看连接情况
 ldd testAdd
 
-临时
-export LD_LIBRARY_PATH=./
+4.配置修改
 
-永久
+4.1.临时
+export LD_LIBRARY_PATH=./ 
+
+4.2.永久
 修改配置
 vi /etc/ld.so.conf
 ~
 include ld.so.conf.d/*.conf
 /home/project/testcode/c-/linux/C++/add
 ~
+
 使配置生效
 ldconfig
 
 
-编译参数
+# 编译参数
 
 -shared 该选项指定生成动态连接库（让连接器生成T类型的导出符号表，有时候也生成弱连接W类型的导出符号），不用该标志外部程序无法连接。相当于一个可执行文件。
 
