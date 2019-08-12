@@ -1,5 +1,11 @@
-#ifndef _BUILD_ADD_H
-#define _BUILD_ADD_SO
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
-int Add(int, int);
+    int Add(int, int);
+    // double Add(double, double);
+
+#ifdef __cplusplus
+}
 #endif
